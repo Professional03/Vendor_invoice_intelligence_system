@@ -1,13 +1,12 @@
+import os
 import joblib
 import pandas as pd
 
+BASE_DIR = os.path.dirname(__file__)
+MODEL_PATH = os.path.join(BASE_DIR, "..", "freight_cost_prediction", "models", "predict_freight_model.pkl")
 
-MODEL_PATH = r"D:\Learning\Projects\Vendor_invoice_intelligence_system\freight_cost_prediction\models\predict_freight_model.pkl"
-
-def load_model(model_path : str = MODEL_PATH):
-    with open(model_path, "rb") as f:
-        model = joblib.load(f)
-    return model
+def load_model(model_path: str = MODEL_PATH):
+    return joblib.load(model_path)
 
 def predict_freight_cost(input_data):
     model = load_model()

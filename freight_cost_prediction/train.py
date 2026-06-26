@@ -9,11 +9,12 @@ from model_evaluation import(
 )
 
 def main():
-    db_path = r"D:\Learning\Projects\Vendor_invoice_intelligence_system\data\inventory.db"
+    project_root = Path(__file__).resolve().parents[1]
+    db_path = project_root / "data" / "inventory.db"
     model_dir = Path("models")
-    model_dir.mkdir(exist_ok = True)
+    model_dir.mkdir(exist_ok=True)
 
-    df = load_vendor_invoice_data(db_path)
+    df = load_vendor_invoice_data(str(db_path))
 
     X,y = prepare_features(df)
     X_train,X_test,y_train,y_test = split_data(X,y)

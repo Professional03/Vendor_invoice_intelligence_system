@@ -1,12 +1,15 @@
+import os
 import sqlite3
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import joblib
-import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+DB_PATH = os.path.join(BASE_DIR, "data", "inventory.db")
 
 def load_invoice_data():
-    conn = sqlite3.connect(r'D:\Learning\Projects\Vendor_invoice_intelligence_system\data\inventory.db')
+    conn = sqlite3.connect(DB_PATH)
     query = """
         WITH purchase_agg AS (
             SELECT
