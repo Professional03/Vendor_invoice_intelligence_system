@@ -212,10 +212,6 @@ This project is licensed under the MIT License - see LICENSE file for details.
 
 Created as part of a data science project for vendor invoice intelligence and cost prediction.
 
-## 📞 Support
-
-For issues or questions, please open an issue on GitHub or contact the project maintainer.
-
 ---
 
 **Last Updated**: June 2026  
